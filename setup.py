@@ -8,18 +8,19 @@ from shutil import rmtree
 
 from setuptools import find_packages, setup, Command
 
-if sys.version_info < (3, 6, 0):
-    print("Sorry, reshape is only supported on Python3.6+.")
+if sys.version_info < (3, 4, 0):
+    print("Sorry, reshape is only supported on Python3.4+.")
     sys.exit(1)
 
 
 # Package meta-data.
 NAME = 'reshape'
+PYPI_NAME = 'reshape-geo'
 DESCRIPTION = 'Read geospatial data formats as GeoJSON.'
 URL = 'https://github.com/tomplex/reshape'
 EMAIL = 'carusot42@gmail.com'
 AUTHOR = 'Tom Caruso'
-REQUIRES_PYTHON = '>=3.6.0'
+REQUIRES_PYTHON = '>=3.4.0'
 VERSION = None
 
 # What packages are required for this module to be executed?
@@ -86,7 +87,7 @@ class UploadCommand(Command):
 
 
 setup(
-    name=NAME,
+    name=PYPI_NAME,
     version=about['__version__'],
     description=DESCRIPTION,
     long_description=long_description,
@@ -105,7 +106,11 @@ setup(
         'License :: OSI Approved :: MIT License',
         'Programming Language :: Python',
         'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.4',
+        'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: Implementation :: CPython',
     ],
     # $ setup.py publish support.
