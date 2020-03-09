@@ -1,3 +1,5 @@
 fiona
 geomet
 pytest
+twine
+wheel
